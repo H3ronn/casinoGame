@@ -16,7 +16,7 @@
     width: 300px;
     
     transform-style: preserve-3d;
-    animation-name: roll;
+    /* animation-name: roll; */
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
 
