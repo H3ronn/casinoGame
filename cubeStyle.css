@@ -1,6 +1,11 @@
+:root {
+    --howManyRolls: 4;
+}
+
 @keyframes roll {
     from {transform: rotate3d(1, 0, 0, 0);}
-    to {transform: rotate3d(1, 0, 0, calc(90deg*20));}
+    to {transform: rotate3d(1, 0, 0, calc(120deg*var(--howManyRolls)));} 
+    /* 120 bo jest podzielone na 3 */
 }
 
 .cubeContainer {
@@ -16,9 +21,12 @@
     width: 300px;
     
     transform-style: preserve-3d;
-    /* animation-name: roll; */
+    /* animation-name: roll;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; */
+    /* transform: rotate3d(1, 0, 0, 960deg); */
+    transition: transform 2s;
 
     margin: 0 20px;
 }
@@ -31,6 +39,8 @@
 }
 .cube:nth-child(3) {
     animation-delay: .6s;
+    /* transform: rotate3d(1, 0, 0, calc(360deg * 3 + 50deg)); */
+
 }
 .cube__item:nth-child(1) {
     background-color:aquamarine;

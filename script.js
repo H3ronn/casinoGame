@@ -1,12 +1,17 @@
-// class Game {
-//     amount = 3;
-
-//     constructor() {
-
-//     }
-// }
-
-const cube = document.querySelector('.cubeContainer');
+const cubes = document.querySelectorAll('.cube');
 const playButton = document.querySelector('.playButton')
 
-playButton.addEventListener('click', () => {cube.style.animation = 'roll 5s ease-in-out';} );
+let slots = []
+cubes.forEach((el, index) => {
+    slots[index] = new Slot(el);
+});
+
+let amount = 4;
+playButton.addEventListener('click', () => {
+
+    slots.forEach(element => {
+        let randomValue = Math.floor(Math.random()*10%3+1); // random value from 1 to 3
+        element.roll(randomValue)
+    });
+} );
+
