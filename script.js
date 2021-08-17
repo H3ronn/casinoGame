@@ -1,17 +1,14 @@
-const cubes = document.querySelectorAll('.cube');
-const playButton = document.querySelector('.playButton')
+const game = new Game();
 
-let slots = []
-cubes.forEach((el, index) => {
-    slots[index] = new Slot(el);
-});
 
-let amount = 4;
-playButton.addEventListener('click', () => {
+const amount = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, }
+for (let i = 0; i < 1000000; i++) {
+    let randomValue2 = Math.floor(Math.random()*10%3+1); // random value from 1 to 3
 
-    slots.forEach(element => {
-        let randomValue = Math.floor(Math.random()*10%3+1); // random value from 1 to 3
-        element.roll(randomValue)
-    });
-} );
+    let randomValue = Math.floor(Math.random()*3 +1);
+    amount[randomValue]++;
+}
+console.log(amount);
+
+
 
