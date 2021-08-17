@@ -5,7 +5,7 @@ class Slot {
     }
 
     currentRotateValue = 360;
-    currentResultValue = null;
+    currentResultValue = 1;
 
 
 
