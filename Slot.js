@@ -45,11 +45,11 @@ class Slot {
         }
     }
 
-    get resultValue2() {
+    get resultValue() {
         return this.currentResultValue;
     }
 
-    getResultValue = () => this.currentResultValue;
+    // getResultValue = () => this.currentResultValue;
 
     showElement() {
         console.log(this.element)

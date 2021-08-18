@@ -10,3 +10,11 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+.betInput {
+    display: block;
+    margin: 30px auto;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+}

@@ -15,9 +15,9 @@ class Game {
     checkWin() {
         // const [{currentResultValue: value1}, {currentResultValue: value2}, {currentResultValue: value3}] = this.slots;
         
-        const slotsValue = this.slots.map( el => el.currentResultValue)
-        console.log(slotsValue);
-        console.log(this.slots);
+        const slotsValue = this.slots.map( el => el.resultValue)
+        // console.log(slotsValue);
+        // console.log(this.slots);
 
         if (slotsValue[0] !== slotsValue[1] || slotsValue[0] !== slotsValue[2]) {
             return false
@@ -29,10 +29,10 @@ class Game {
     addRollActionToButton() {
         this.playButton.addEventListener('click', () => {
         
+            console.log(betInput.value);
             this.slots.forEach(slot => {
                 let randomValue = Math.floor(Math.random()*3 +1); // random value from 1 to 3
                 slot.roll(randomValue)
-
 
                 // console.log(slot.element.id);
                 // console.log(slot.currentResultValue);
