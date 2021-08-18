@@ -3,8 +3,7 @@ class Game {
         this.cubes = document.querySelectorAll('.cube');
         this.playButton = document.querySelector('.playButton')
         this.betInput = document.querySelector('.betInput');
-        this.scoreboard = document.querySelector('.scoreboard')
-        this.info = document.querySelector('.info')
+        
         
         this.slots = []
         this.cubes.forEach((el, index) => {
@@ -20,19 +19,14 @@ class Game {
             e.target.value = Math.abs(e.target.value);
             }
         })
-    }
 
-    statistics = {
-        wins: 0,
-        loses: 0,
-        points: 100,
+        this.statistics = new Statistics();
     }
-
 
     isWin() {
         // const [{currentResultValue: value1}, {currentResultValue: value2}, {currentResultValue: value3}] = this.slots;
         
-        const slotsValue = this.slots.map( el => el.resultValue)
+        const slotsValue = this.slots.map( el => el.resultValue);
 
         if (slotsValue[0] === slotsValue[1] && slotsValue[0] === slotsValue[2]) {
             return true
@@ -41,27 +35,18 @@ class Game {
         }
     }
 
-    
-
     play = (bet) => {
-        if (this.statistics.points >= bet) {
-            this.info.innerHTML = "";
+        const {counter} = this.statistics;
+        const stats = this.statistics;
+        if (counter.points >= bet) {
+            stats.updateInfo("");
 
             this.spinSlots();
+            stats.updateStatistics(bet, this.isWin());
             
-            this.statistics.points -= bet;
-            this.updateScoreboard();
-            if (this.isWin()) {
-                this.statistics.wins++;
-                this.statistics.points += bet*9;
-                this.updateScoreboard();
-            } else {
-                this.statistics.loses++;
-                this.updateScoreboard();
-            } 
         } else {
             // alert("You don't have enough points to bet! :<")
-            this.info.innerHTML = "You don't have enough points to bet! :<";
+            stats.updateInfo("You don't have enough points to bet! :<");
         }
     }
 
@@ -72,7 +57,6 @@ class Game {
         });
     }
 
-    updateScoreboard = () => this.scoreboard.innerHTML = this.statistics.points;
 
 
 
