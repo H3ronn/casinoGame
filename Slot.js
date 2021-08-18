@@ -1,7 +1,6 @@
 class Slot {
-    constructor(element, initialValue) {
+    constructor(element) {
         this.element = element
-        this.currentDraw = initialValue;
     }
 
     currentRotateValue = 360;
