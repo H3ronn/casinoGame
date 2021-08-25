@@ -1,8 +1,10 @@
 class Game {
     constructor() {
+        this.statistics = new Statistics();
+        this.bet = new Bet();
+
         this.cubes = document.querySelectorAll('.cube');
         this.playButton = document.querySelector('.playButton')
-        this.betInput = document.querySelector('.betInput');
         
         
         this.slots = []
@@ -11,16 +13,9 @@ class Game {
         });
 
         this.playButton.addEventListener('click', () => {
-            this.play(this.betInput.value);
+            this.play(this.bet.betInput.value);
         });
 
-        this.betInput.addEventListener('change', (e) => {
-        if (e.target.value < 0) {
-            e.target.value = Math.abs(e.target.value);
-            }
-        })
-
-        this.statistics = new Statistics();
     }
 
     isWin() {
@@ -36,7 +31,7 @@ class Game {
     }
 
     play = (bet) => {
-        const {counter} = this.statistics;
+        const counter = Statistics.counter;
         const stats = this.statistics;
         if (counter.points >= bet) {
             stats.updateInfo("");
@@ -56,11 +51,5 @@ class Game {
             slot.roll(randomValue)
         });
     }
-
-
-
-
-    
-
 
 }

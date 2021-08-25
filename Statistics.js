@@ -1,30 +1,34 @@
 class Statistics {
     constructor() {
-        this.scoreboard = document.querySelector('.scoreboard')
-        this.info = document.querySelector('.info')
+        this.scoreboard = document.querySelector('.scoreboard');
+        this.info = document.querySelector('.info');
     }
 
-    counter = {
+    static counter = {
         wins: 0,
         loses: 0,
         points: 100,
     }
 
     updateStatistics(bet, win) {
-        this.counter.points -= bet;
-        this.scoreboard.innerHTML = this.counter.points;
+        Statistics.counter.points -= bet;
+        this.updateScoreboard();
         if (win) {
-            this.counter.wins++;
-            this.counter.points += bet*9;
-            this.scoreboard.innerHTML = this.counter.points;
+            Statistics.counter.wins++;
+            Statistics.counter.points += bet*9;
+            this.updateScoreboard();
         } else {
-            this.counter.loses++;
-            this.scoreboard.innerHTML = this.counter.points;
+            Statistics.counter.loses++;
+            this.updateScoreboard();
         } 
     }
 
     updateInfo(alert) {
         this.info.innerHTML = alert;
+    }
+
+    updateScoreboard() {
+        this.scoreboard.innerHTML = Statistics.counter.points;
     }
 
     

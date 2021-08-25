@@ -8,7 +8,7 @@ html {
 .playButton {
     margin: 0 auto;
     display: block;
-    font-size: 3.5em;
+    font-size: 4em;
     padding: 20px 40px;
     border: none;
     border-radius: 10px;
@@ -20,14 +20,28 @@ html {
 
 .betInput {
     display: block;
-    margin: 30px auto;
+    margin: 30px auto 0;
     height: 50px;
-    font-size: 3.5em;
+    font-size: 4em;
     text-align: center;
 }
 
+.controls {
+    text-align: center;
+    margin: 10px 0 40px;
+}
+
+.control {
+    /* border: none; */
+    background: none;
+    font-size: 3em;
+    margin: 0 10px;
+    padding: 6px 30px;
+    cursor: pointer;
+}
+
 .statisticsContainer {
-    font-size: 3.5em;
+    font-size: 4em;
     text-align: center;
 }
 

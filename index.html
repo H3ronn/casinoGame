@@ -12,22 +12,30 @@
     <div class="wrapper">
         <div class="cubeContainer">
             <div class="cube" id="pierwszy">
-                <div class="cube__item">1</div>
-                <div class="cube__item">2</div>
-                <div class="cube__item">3</div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
             </div>
             <div class="cube" id="drugi">
-                <div class="cube__item">1</div>
-                <div class="cube__item">2</div>
-                <div class="cube__item">3</div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
             </div>
             <div class="cube" id="trzeci">
-                <div class="cube__item">1</div>
-                <div class="cube__item">2</div>
-                <div class="cube__item">3</div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
             </div>
         </div>
-        <input type="number" name="number" id="number" value=10 min=1 class="betInput">
+        <div class="inputContainer">
+            <input type="number" name="number" id="number" value=10 min=1 class="betInput">
+            <div class="controls">
+                <button class="half control" data-change="0.5">1/2</button>
+                <button class="x2 control" data-change="2">x2</button>
+                <button class="x3 control" data-change="3">x3</button>
+                <button class="allIn control" data-change="allin">all-in</button>
+            </div>
+        </div>
         <button class="playButton" id="play">Let's ROLL</button>
         <div class="statisticsContainer">
             <p class="statistics">You have <span class="scoreboard">100</span> points</p>
@@ -40,6 +48,7 @@
     <script src="Slot.js"></script>
     <script src="Game.js"></script>
     <script src="Statistics.js"></script>
+    <script src="Bet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
