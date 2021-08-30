@@ -9,6 +9,7 @@ class Statistics {
         loses: 0,
         points: 100,
     }
+    
 
     updateStatistics(bet, win) {
         Statistics.counter.points -= bet;

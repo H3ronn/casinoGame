@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class Bet {
     constructor(counter) {
         this.betInput = document.querySelector('.betInput');
@@ -7,17 +8,18 @@ class Bet {
         this.betInput.addEventListener('change', (e) => {
             if (e.target.value < 0) {
                 e.target.value = Math.abs(e.target.value);
-            }           
+            }
         });
 
-        this.controls.forEach(el => {
+        this.controls.forEach((el) => {
             el.addEventListener('click', (e) => {
-                if (e.currentTarget.dataset.change === "allin") {
+                if (e.currentTarget.dataset.change === 'allin') {
+                    // eslint-disable-next-line no-undef
                     this.betInput.value = Statistics.counter.points;
                 } else {
-                    this.betInput.value = this.betInput.value * parseFloat(e.currentTarget.dataset.change);
+                    this.betInput.value *= parseFloat(e.currentTarget.dataset.change);
                 }
-            })
+            });
         });
     }
 }
