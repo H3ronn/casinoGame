@@ -1,4 +1,6 @@
-class Bet {
+import Statistics from "./Statistics.js";
+
+export default class Bet {
   constructor(counter) {
     this.betInput = document.querySelector(".betInput");
     this.controls = document.querySelectorAll(".control");
