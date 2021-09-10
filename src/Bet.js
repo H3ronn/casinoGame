@@ -16,8 +16,13 @@ export default class Bet {
       el.addEventListener("click", (e) => {
         if (e.currentTarget.dataset.change === "allin") {
           this.betInput.value = Statistics.counter.points;
-        } else {
+        } else if (e.currentTarget.dataset.change) {
           this.betInput.value *= parseFloat(e.currentTarget.dataset.change);
+        } else {
+          // console.log(e.currentTarget.dataset.changeBottom); // w html change-bottom w js = changeBottom ????
+          this.betInput.value =
+            parseFloat(e.currentTarget.dataset.changeBottom) +
+            parseFloat(this.betInput.value);
         }
       });
     });

@@ -24,6 +24,7 @@ html {
     height: 50px;
     font-size: 4em;
     text-align: center;
+    max-width: 100%;
 }
 
 .controls {

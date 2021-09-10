@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cubeStyle.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/cubeStyle.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -30,10 +30,16 @@
         <div class="inputContainer">
             <input type="number" name="number" id="number" value=10 min=1 class="betInput">
             <div class="controls">
-                <button class="half control" data-change="0.5">1/2</button>
-                <button class="x2 control" data-change="2">x2</button>
-                <button class="x3 control" data-change="3">x3</button>
-                <button class="allIn control" data-change="allin">all-in</button>
+                <div class="topControls">
+                    <button class="half control" data-change="0.5">1/2</button>
+                    <button class="x2 control" data-change="2">x2</button>
+                    <button class="x3 control" data-change="3">x3</button>
+                    <button class="allIn control" data-change="allin">all-in</button>
+                </div>
+                <div class="bottonControls">
+                    <button class="increment control" data-change-bottom='1'>+</button>
+                    <button class="decrement control" data-change-bottom='-1'>-</button>
+                </div>
             </div>
         </div>
         <button class="playButton" id="play">Let's ROLL</button>
