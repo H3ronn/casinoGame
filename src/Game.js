@@ -15,10 +15,10 @@ export default class Game {
       this.slots[index] = new Slot(el);
     });
 
-    this.playButton.addEventListener("click", () => {
-      this.play(this.bet.betInput.value);
-    });
+    this.playButton.addEventListener("click", this.play.bind(this));
   }
+
+  isRolling = false;
 
   isWin() {
     // const [{currentResultValue: value1}, {currentResultValue: value2}, {currentResultValue: value3}] = this.slots;
@@ -31,17 +31,29 @@ export default class Game {
     return false;
   }
 
-  play(bet) {
+  play() {
     // const { counter } = Statistics;
-    const stats = this.statistics;
-    if (Statistics.counter.points >= bet) {
-      stats.displayInfo("");
 
-      this.spinSlots();
-      stats.updateStatistics(bet, this.isWin());
-    } else {
-      // alert("You don't have enough points to bet! :<")
-      stats.displayInfo("You don't have enough points to bet! :<");
+    if (!this.isRolling) {
+      const bet = this.bet.betInput.value;
+      this.isRolling = true;
+
+      const stats = this.statistics;
+      if (Statistics.counter.points >= bet) {
+        Statistics.counter.points -= bet;
+        stats.updateScoreboard();
+        stats.displayInfo("Rolling!");
+
+        setTimeout(() => {
+          this.isRolling = false;
+          stats.updateStatistics(bet, this.isWin());
+        }, 3000);
+
+        this.spinSlots();
+      } else {
+        // alert("You don't have enough points to bet! :<")
+        stats.displayInfo("You don't have enough points to bet! :<");
+      }
     }
   }
 

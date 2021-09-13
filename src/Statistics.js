@@ -18,7 +18,7 @@ export default class Statistics {
   };
 
   updateStatistics(bet, win) {
-    Statistics.counter.points -= bet;
+    // Statistics.counter.points -= bet;
     // this.updateScoreboard();
 
     if (win) {
