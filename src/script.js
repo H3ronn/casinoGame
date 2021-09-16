@@ -1,5 +1,4 @@
 import Game from "./Game.js";
-import test from "./test.js";
 
 const game = new Game();
 // setInterval(() => {
