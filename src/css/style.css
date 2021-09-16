@@ -2,14 +2,41 @@
 html {
     font-size: 62.5%;
     font-family: "Montserrat", sans-serif;
+}
 
-  }
+.wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.panel {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.rightPanel {
+    flex: 1;
+    margin-top: 20px;
+    
+}
+
+.leftPanel {
+    flex: 1;
+}
+
+.statistics {
+    font-size: 3em;
+    text-align: center;
+
+}
 
 .playButton {
     margin: 0 auto;
     display: block;
-    font-size: 4em;
-    padding: 20px 40px;
+    font-size: 3em;
+    padding: 15px 30px;
     border: none;
     border-radius: 10px;
     background-color: rgb(13, 155, 211);
@@ -22,30 +49,66 @@ html {
     display: block;
     margin: 30px auto 0;
     height: 50px;
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
     max-width: 100%;
+    border: none;
+    border-bottom: 2px black solid;
+    border-top: 2px black solid;
+    border-radius: 8px;
 }
 
 .controls {
     text-align: center;
-    margin: 10px 0 40px;
+    margin: 10px 0;
+
 }
 
 .control {
-    /* border: none; */
     background: none;
-    font-size: 3em;
+    font-size: 2em;
     margin: 0 10px;
     padding: 6px 30px;
     cursor: pointer;
+    border: none;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+    border-radius: 8px;
 }
 
-.statisticsContainer {
-    font-size: 4em;
-    text-align: center;
+.bottonControls {
+    margin: 15px 0;
 }
+
 
 .scoreboard {
     color:rgb(13, 155, 211)
+}
+
+@media (max-width: 1050px) {
+    .panel {
+        flex-direction: column;
+        margin: 0;
+    }
+
+
+    .statistics {
+        font-size: 2.5em;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 525px) {
+    .betInput {
+        width: 50%;
+    }
+
+    .playButton {
+        margin-bottom: 20px;
+    }
+
+    .control {
+        font-size: 2em;
+        padding: 5px 12px;
+    }
 }
