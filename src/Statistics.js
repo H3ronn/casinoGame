@@ -1,7 +1,7 @@
 export default class Statistics {
   constructor() {
-    this.scoreboard = document.querySelector(".scoreboard");
-    this.info = document.querySelector(".info");
+    this.scoreboard = document.querySelector('.scoreboard');
+    this.info = document.querySelector('.info');
 
     // this.counter = {
     //   wins: 0,

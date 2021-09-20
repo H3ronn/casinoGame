@@ -1,21 +1,21 @@
-import Statistics from "./Statistics.js";
-import Bet from "./Bet.js";
-import Slot from "./Slot.js";
+import Statistics from './Statistics.js';
+import Bet from './Bet.js';
+import Slot from './Slot.js';
 
 export default class Game {
   constructor() {
     this.statistics = new Statistics();
     this.bet = new Bet();
 
-    this.cubes = document.querySelectorAll(".cube");
-    this.playButton = document.querySelector(".playButton");
+    this.cubes = document.querySelectorAll('.cube');
+    this.playButton = document.querySelector('.playButton');
 
     this.slots = [];
     this.cubes.forEach((el, index) => {
       this.slots[index] = new Slot(el);
     });
 
-    this.playButton.addEventListener("click", this.play.bind(this));
+    this.playButton.addEventListener('click', this.play.bind(this));
   }
 
   isRolling = false;
@@ -42,7 +42,7 @@ export default class Game {
       if (Statistics.counter.points >= bet) {
         Statistics.counter.points -= bet;
         stats.updateScoreboard();
-        stats.displayInfo("Rolling!");
+        stats.displayInfo('Rolling!');
 
         setTimeout(() => {
           this.isRolling = false;
