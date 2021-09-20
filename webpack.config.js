@@ -16,4 +16,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     // __dirname to !prawie! to samo co ./
   },
+  devServer: {
+    static: "./dist",
+  },
 };
