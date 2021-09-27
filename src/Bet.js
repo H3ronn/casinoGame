@@ -18,7 +18,7 @@ export default class Bet {
           this.betInput.value = Statistics.counter.points;
         } else if (e.currentTarget.dataset.change) {
           this.betInput.value *= parseFloat(e.currentTarget.dataset.change);
-        } else {
+        } else if (this.betInput.value >= 1) {
           // console.log(e.currentTarget.dataset.changeBottom); // w html change-bottom w js = changeBottom ????
           this.betInput.value =
             parseFloat(e.currentTarget.dataset.changeBottom) +

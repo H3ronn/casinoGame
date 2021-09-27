@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cubeStyle.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="cubeContainer">
+            <div class="cube">
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+            </div>
+            <div class="cube">
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+            </div>
+            <div class="cube">
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+                <div class="cube__item"></div>
+            </div>
+        </div>
+        <div class="panel">
+
+            <div class="leftPanel">
+                <input type="number" name="number" id="number" value=10 min=1 class="betInput">
+                <div class="controls">
+                    <div class="topControls">
+                        <button class="half control" data-change="0.5">1/2</button>
+                        <button class="x2 control" data-change="2">x2</button>
+                        <button class="x3 control" data-change="3">x3</button>
+                        <button class="allIn control" data-change="allin">all-in</button>
+                    </div>
+                    <div class="bottonControls">
+                        <button class="increment control" data-change-bottom='1'>+</button>
+                        <button class="decrement control" data-change-bottom='-1'>-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="rightPanel">
+                <button class="playButton" id="play">Let's ROLL</button>
+                <p class="statistics poionts">You have <span class="scoreboard">100</span> points</p>
+                <p class="statistics info">Click/tap roll to play!</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
