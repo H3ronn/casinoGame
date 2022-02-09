@@ -2,15 +2,8 @@ export default class Statistics {
   constructor() {
     this.scoreboard = document.querySelector('.scoreboard');
     this.info = document.querySelector('.info');
-
-    // this.counter = {
-    //   wins: 0,
-    //   loses: 0,
-    //   points: 100,
-    // };
   }
 
-  // static test = 123;
   static counter = {
     wins: 0,
     loses: 0,
@@ -18,9 +11,6 @@ export default class Statistics {
   };
 
   updateStatistics(bet, win) {
-    // Statistics.counter.points -= bet;
-    // this.updateScoreboard();
-
     if (win) {
       Statistics.counter.wins += 1;
       Statistics.counter.points += bet * 9;

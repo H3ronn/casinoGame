@@ -13,18 +13,32 @@ export default class Bet {
     });
 
     this.controls.forEach((el) => {
-      el.addEventListener('click', (e) => {
-        if (e.currentTarget.dataset.change === 'allin') {
-          this.betInput.value = Statistics.counter.points;
-        } else if (e.currentTarget.dataset.change) {
-          this.betInput.value *= parseFloat(e.currentTarget.dataset.change);
-        } else if (this.betInput.value >= 1) {
-          // console.log(e.currentTarget.dataset.changeBottom); // w html change-bottom w js = changeBottom ????
-          this.betInput.value =
-            parseFloat(e.currentTarget.dataset.changeBottom) +
-            parseFloat(this.betInput.value);
-        }
-      });
+      el.addEventListener('click', this.handleControls);
     });
   }
+
+  handleControls = (e) => {
+    const modifierType = e.currentTarget.dataset.change;
+    const betValue = parseFloat(this.betInput.value);
+    if (modifierType === 'allin') {
+      this.changeBetValue(Statistics.counter.points);
+    } else if (modifierType) {
+      // this.betInput.value *= parseFloat(modifierType);
+      this.changeBetValue(betValue * parseFloat(modifierType));
+    } else if (this.betInput.value >= 0) {
+      // console.log(e.currentTarget.dataset.changeBottom); // w html change-bottom w js = changeBottom ????
+
+      this.changeBetValue(
+        betValue + parseFloat(e.currentTarget.dataset.changeBottom)
+      );
+    }
+  };
+
+  changeBetValue = (actualValue) => {
+    this.betInput.value = actualValue;
+    console.log(this.betInput.value);
+    if (this.betInput.value < 0) {
+      this.changeBetValue(0);
+    }
+  };
 }
