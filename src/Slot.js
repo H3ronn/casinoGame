@@ -17,10 +17,11 @@ export default class Slot {
     }
 
     this.#resultValue = resultValue;
+    const howMany = (resultValue - 1) * 120;
     this.#element.style.transform = `rotate3d(1, 0, 0, calc(${
       this.#rotateValue
-    }deg * ${spinsAmount} + ${(resultValue - 1) * 120}deg ))`;
-    this.#rotateValue += 360 * spinsAmount + (resultValue - 1) * 120;
+    }deg * ${spinsAmount} + ${howMany}deg ))`;
+    this.#rotateValue += 360 * spinsAmount + howMany;
   }
 
   get resultValue() {
