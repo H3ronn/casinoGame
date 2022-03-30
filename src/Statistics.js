@@ -15,11 +15,11 @@ export default class Statistics {
       Statistics.counter.wins += 1;
       Statistics.counter.points += bet * 9;
       this.updateScoreboard();
-      this.displayInfo(`You win ${bet * 9} points!`);
+      this.displayInfo(`You won ${bet * 9} points!`);
     } else {
       Statistics.counter.loses += 1;
       this.updateScoreboard();
-      this.displayInfo(`You lose ${bet} points!`);
+      this.displayInfo(`You lost ${bet} points!`);
     }
   }
 
