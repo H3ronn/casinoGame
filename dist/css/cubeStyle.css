@@ -19,13 +19,13 @@
 }
 
 .cube:nth-child(1){
-transition: transform 2s ease-out;
+transition: transform 2s cubic-bezier(.23,0,.42,1);
 }
 .cube:nth-child(2){
-transition: transform 2.5s ease-out;
+transition: transform 2.5s cubic-bezier(.23,0,.42,1);
 }
 .cube:nth-child(3){
-transition: transform 3s ease-out;
+transition: transform 3s cubic-bezier(.23,0,.42,1);
 }
 
 .cube__item:nth-child(1) {

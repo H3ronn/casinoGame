@@ -12,7 +12,7 @@ export default class Game {
 
   constructor() {
     this.#statistics = new Statistics();
-    this.#bet = new Bet();
+    this.#bet = new Bet(10);
 
     this.#cubes = document.querySelectorAll('.cube');
     this.#playButton = document.querySelector('.playButton');
@@ -35,19 +35,19 @@ export default class Game {
   #play() {
     if (this.#isRolling) return;
 
-    const bet = this.#bet.betInput.value;
+    const betValue = this.#bet.value;
     this.#isRolling = true;
 
     const stats = this.#statistics;
-    if (Statistics.counter.points >= bet) {
-      Statistics.counter.points -= bet;
+    if (Statistics.counter.points >= betValue) {
+      Statistics.counter.points -= betValue;
       stats.updateScoreboard();
       stats.displayInfo('Rolling!');
       this.#spinSlots();
 
       setTimeout(() => {
         this.#isRolling = false;
-        stats.updateStatistics(bet, this.#isWin());
+        stats.updateStatistics(betValue, this.#isWin());
       }, 3000);
     } else {
       stats.displayInfo("You don't have enough points to bet! :<");
