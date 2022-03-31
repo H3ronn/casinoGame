@@ -8,7 +8,6 @@ export default class Bet {
 
   constructor(value) {
     this.#betInput = document.querySelector('.betInput');
-    this.#controls = document.querySelectorAll('.control');
     this.#controlsContainer = document.querySelector('.controls');
     this.#value = value;
     this.#betInput.value = this.#value;
@@ -27,6 +26,7 @@ export default class Bet {
   }
 
   #handleControls = (control) => {
+    // change to more readable!
     const modifierType = control.dataset.change;
     const betValue = parseFloat(this.#betInput.value);
     if (modifierType === 'allin') {

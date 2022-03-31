@@ -1,7 +1,10 @@
 export default class Statistics {
+  #scoreboard;
+  #info;
+
   constructor() {
-    this.scoreboard = document.querySelector('.scoreboard');
-    this.info = document.querySelector('.info');
+    this.#scoreboard = document.querySelector('.scoreboard');
+    this.#info = document.querySelector('.info');
   }
 
   static counter = {
@@ -24,10 +27,10 @@ export default class Statistics {
   }
 
   displayInfo(alert) {
-    this.info.textContent = alert;
+    this.#info.textContent = alert;
   }
 
   updateScoreboard() {
-    this.scoreboard.textContent = Statistics.counter.points;
+    this.#scoreboard.textContent = Statistics.counter.points;
   }
 }

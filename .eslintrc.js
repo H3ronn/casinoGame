@@ -16,7 +16,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     'no-use-before-define': ['error', { functions: false, classes: false }],
     'prettier/prettier': 'error',
-    'import/extensions': 'warn',
+    'import/extensions': 'off',
     'lines-between-class-members': 'off',
   },
 };
