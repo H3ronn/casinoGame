@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <div align="center">
   <h1>Casino game</h1>
   <p align="center">Try your luck and try to score as many points as possible. Good luck!
